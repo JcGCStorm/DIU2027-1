@@ -1,26 +1,53 @@
 /* La fuente no viene por defecto entonces la descargué de Dafont y la 
  *                    incluí directamente                               */
 @font-face {
-  font-family: 'Bukhari Script';
+  font-family: 'Bukhari Script Normal';
+  src: url('fuentes/bukhari_script/BukhariScript.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Bukhari Script Alternates';
   src: url('fuentes/bukhari_script/BukhariScriptAlternates.ttf') format('truetype');
 }
 
+
 /* Es del body, para manejar el fondo, márgenes y relleno */
 body {
-  font-family: 'Bukhari Script';
+  font-family: 'Bukhari Script Normal';
   background-color: #126692;
   margin: 0;
   padding: 20px;
+  /* De momento lo tengo comentado porque con la imagen de fondo se ve mal */
+  /*  background-image: url('imagenes/environment2.jpg');*/ 
+  /* Evita que la imagen se repita en mosaico */
+ /* background-repeat: no-repeat; */
+  /* Centra la imagen horizontal y verticalmente */
+ /* background-position: center center; */
+  /*Escala la imagen para cubrir toda la pantalla sin deformarse */
+ /* background-size: cover; */
+  /*Asegura que el body ocupe al menos el alto total de la ventana */
+ /* min-height: 100vh; */
+ /* margin: 0; */
 }
 
-h1 {
-  color: #2c3e50;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bukhari Script Alternates';
+  font-weight: normal; 
+  letter-spacing: 0.5px;
+  color: #9c5ee5;
 }
 
 /* Es de la clase destacado, para resaltar ciertos elementos */
 .destacado {
   color: #fd357b;
+  font-weight: bold;
   font-size: 18px;
+}
+
+.nav-link {
+  color: #9c5ee5;
+  text-decoration: none;
+  margin-right: 20px;
 }
 
 /* Para el botón */
