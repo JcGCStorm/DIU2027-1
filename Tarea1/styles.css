@@ -59,3 +59,74 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 6px;
   cursor: pointer;
 }
+
+/* --- Clase de las tarjetas --- */
+.seccion-tarjetas {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* con esto centramos la sección, la idea es que sean rombos pero de momento son cuadrados */
+}
+
+/* --- Contenedor de la cuadrícula --- */
+.contenedor-grid {
+  display: grid;
+  /* Crea columnas responsivas automáticas de mínimo 280px */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px; /* Espacio entre cada tarjeta */
+  margin-top: 20px;
+}
+
+/* --- Acá metemos el estilo de cada Tarjeta --- */
+.tarjeta {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Con esto evitamos que la foto se estire o deforme */
+  display: block;
+}
+
+/* Texto y padding interno de la tarjeta */
+.contenido-tarjeta {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Como las descripciones de los objetos tienen diferentes
+  alturas le puse el 1 para que se expandan ed manera uniforme, sin ese 1
+  el botón se desplaza hasta arriba, pero todos modos tengo que cambiarle
+  que no sea infinito cuanto crecen las tarjetas */
+}
+
+.contenido-tarjeta h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #2323db;
+}
+
+.contenido-tarjeta p {
+  color: #555555;
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* Botón o enlace de la tarjeta */
+.boton-tarjeta {
+  margin-top: auto; /* Con esto empuja el botón siempre al fondo de la tarjeta 
+  Pero necesita que el flex grow sea 1 porque si no no sé que pasa que lo ignora o algo*/
+  display: inline-block;
+  text-align: center;
+  background-color: #fd357b;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+}
