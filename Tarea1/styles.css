@@ -1,0 +1,34 @@
+/* La fuente no viene por defecto entonces la descargué de Dafont y la 
+ *                    incluí directamente                               */
+@font-face {
+  font-family: 'Bukhari Script';
+  src: url('fuentes/bukhari_script/BukhariScriptAlternates.ttf') format('truetype');
+}
+
+/* Es del body, para manejar el fondo, márgenes y relleno */
+body {
+  font-family: 'Bukhari Script';
+  background-color: #126692;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+/* Es de la clase destacado, para resaltar ciertos elementos */
+.destacado {
+  color: #fd357b;
+  font-size: 18px;
+}
+
+/* Para el botón */
+#boton-accion {
+  background-color: #fd357b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
