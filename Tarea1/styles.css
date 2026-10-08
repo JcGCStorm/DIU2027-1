@@ -1,3 +1,4 @@
+/* Variables de color para mantener consistencia en el diseño */
 :root {
   --color-principal: #126692;
   --color-secundario: #9c5ee5;
@@ -22,6 +23,8 @@
   src: url('fuentes/bukhari_script/BukhariScript.ttf') format('truetype');
 }
 
+/* Animación para que los elementos aparezcan suavemente desde abajo y con
+ una opacidad incremental */
 @keyframes aparecerSuave {
   from {
     opacity: 0;
@@ -33,6 +36,7 @@
   }
 }
 
+/* La fuente del texto alternativa     */
 @font-face {
   font-family: 'Bukhari Script Alternates';
   src: url('fuentes/bukhari_script/BukhariScriptAlternates.ttf') format('truetype');
@@ -57,6 +61,7 @@ body {
   margin: 0; 
 }
 
+/* Es el estilo de los encabezados, para que tengan la fuente alternativa y un color más llamativo */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Bukhari Script Alternates';
   font-weight: normal; 
@@ -64,14 +69,14 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-secundario);
 }
 
-/* Es de la clase destacado, para resaltar ciertos elementos */
+/* Es la clase destacado, para resaltar ciertos elementos */
 .destacado {
   color: var(--color-destacado);
   font-weight: bold;
   font-size: 18px;
 }
 
-/* Es de la clase logo, para el nombre del sitio web, de momento es un texto nomas */
+/* Es la clase logo, para el nombre del sitio web, de momento es solo un texto */
 .logo {
   font-family: 'Bukhari Script Alternates';
   font-size: 28px;
@@ -86,6 +91,8 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
+/* Con esto manejamos el estilo de la barra de navegación, que se quede pegada en 
+la parte superior y que tenga un fondo */
 .navbar {
   display: flex;
   position: sticky;
@@ -99,6 +106,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-footer);
 }
 
+/* Estilo de los links de navegación, para que tengan un color y un espacio entre ellos */
 .nav-link {
   color: var(--color-texto);
   text-decoration: none;
@@ -107,22 +115,26 @@ h1, h2, h3, h4, h5, h6 {
   gap: 10px;
 }
 
+/* este es un hover para que cuando pasemos el cursor sobre los links de navegación 
+cambie de color y se subraye */
 .nav-link:hover {
   color: var(--color-hover); /* De momento solo cambia el color de los links al pasar el cursor */
   text-decoration: underline;
 }
 
+/* Es el estilo del formulario de búsqueda, para que se vea más bonito y tenga un espacio entre los elementos */
 .search-form {
   display: flex;
   align-items: center;
 }
 
+/* Es el estilo del hero, para que tenga un fondo, un color de texto y un padding */
 .hero {
   text-align: center;
   padding: 30px 15px;
   color: var(--color-blanco); /* Color del texto del hero */
   border-radius: 12px; /* Bordes redondeados del hero */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave del hero */
+  box-shadow: 0 4px 12px var(--color-texto); /* Sombra suave del hero */
   width: 90%;
   height: auto;
   background-color: var(--color-secundario); /* Color de fondo del hero */
@@ -131,6 +143,7 @@ h1, h2, h3, h4, h5, h6 {
   animation: aparecerSuave 1s ease-out;
 }
 
+/* Estilo del título del hero, para que tenga un tamaño de fuente y un color distintos*/
 .hero h3 {
   margin-top: 0;
   margin-bottom: 10px;
@@ -138,9 +151,10 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-titulo-hero); /* Color del título del hero */
 }
 
+/* Es un estilo para los botones en general, siempre uso los mismos entonces con esta clase los controlo todos */
 .btn {
   background-color: var(--color-terciario);
-  color: white;
+  color: var(--color-blanco);
   border: none;
   padding: 10px 20px;
   border-radius: 6px;
@@ -150,11 +164,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
 }
 
+/* Este es un hover para los botones, para que cambie de color al pasar el cursor */
 .btn:hover {
   background-color: var(--color-hover); /* Color más oscuro al pasar el cursor */
 }
 
-/* Cuando se hace click sobre un campo de texto se activa el focus*/
+/* Cuando se hace click sobre un campo de texto se activa el focus, que es un efecto visual para llamar
+la atención */
 input:focus,
   textarea:focus {
   outline: none; /* Quita el marco negro por defecto, me daba problemas que pintaba solo unas partes rosa y otras negro */
@@ -167,7 +183,7 @@ input:focus,
 .seccion-tarjetas {
   padding: 40px 20px;
   max-width: 1200px;
-  margin: 0 auto; /* con esto centramos la sección, la idea es que sean rombos pero de momento son cuadrados */
+  margin: 0 auto; /* con esto centramos la sección */
 }
 
 /* --- Contenedor de la cuadrícula --- */
@@ -183,11 +199,23 @@ input:focus,
 .tarjeta {
   background-color: var(--color-blanco);
   position: relative;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px var(--color-texto); /* Sombra suave */
-  display: flex; 
-  transition: transform 0.2s ease, box-shadow 0.2s ease;  /* Con esto le agregamos un pequeño delay al hover */
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  /* Proporción cuadrada, a pesar de ser circulares es necesaria para cubrir el espacio */
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+ /* Acá ya tenemos la forma circular, con esto conseguimos que la tarjeta sea redonda y no cuadrada */
+  border-radius: 50%;
+  overflow: hidden; /* Corta la imagen y el contenido en forma redonda */
+  /* Marco decorativo para que haga ilusión de ser un espejo circular */
+  border: 5px solid var(--color-destacado);
+  box-shadow: 0 8px 20px var(--color-texto);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Efecto al pasar el cursor sobre la tarjeta */
@@ -199,24 +227,27 @@ input:focus,
 /* Imagen dentro de la tarjeta */
 .tarjeta img {
   width: 100%;
-  height: 200px;
-  object-fit: contain; /* Con esto evitamos que la foto se estire o deforme */
+  height: 45%;
+  object-fit: cover; /* Con esto evitamos que la foto se estire o deforme */
   display: block;
 }
 
 /* Texto y padding interno de la tarjeta */
 .contenido-tarjeta {
-  padding: 16px;
+  padding: 8px 30px 18px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  text-align: center;
   flex-grow: 1; /* Como las descripciones de los objetos tienen diferentes
   alturas le puse el 1 para que se expandan ed manera uniforme, sin ese 1
   el botón se desplaza hasta arriba */
 }
 
 .contenido-tarjeta h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
+  margin-top: 2px 0;
+  font-size: 16px;
   color: var(--color-titulo-H3);
 }
 
@@ -226,9 +257,9 @@ input:focus,
   -webkit-box-orient: vertical;
   overflow: hidden; /*Sin esto no funciona el recorte de texto, continua hasta abajo aunque tenga solo 3 líneas 
   y se encima con el botón*/
-  font-size: 14px;
-  line-height: 1.4; /* este es el espaciado entre lines */
-  margin-bottom: 16px; /* El margen inferior de la tarjeta*/
+  font-size: 11px;
+  line-height: 1.2; /* este es el espaciado entre lines */
+  margin: 4px 0 8px;
   overflow-wrap: break-word; /* Rompe palabras largas para que no se salgan de la tarjeta */
   max-width: 100%;
 }
@@ -248,6 +279,22 @@ input:focus,
   aun no se*/
 }
 
+.btn-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* Controla el tamaño de la imagen */
+.icono-pocion {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
 .caja-cuadrada {
   width: 100px;
   height: 100px;
@@ -262,10 +309,35 @@ input:focus,
   flex-direction: column;
   box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
   margin: 0 auto; /* Centra el formulario horizontalmente */
+  position: relative; /* Para que el badge del formulario se posicione correctamente */
   padding: 20px;
   background-color: var(--color-blanco);
   border-radius: 8px;
   box-shadow: 0 4px 12px var(--color-texto); 
+}
+
+/* Posiciona el badge en la esquina superior derecha */
+.badge-formulario {
+  position: absolute;
+  top: -15px;       
+  right: 20px;
+  background-color: var(--color-secundario); 
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Círculo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+/* Control del tamaño de la imagen interior */
+.icono-badge {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
 }
 
 .formulario:focus-within {
@@ -301,13 +373,13 @@ input:focus,
 * si el objeto fue encontrado, perdido o recuperado */
 .badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 5px 10px;
+  top: 15px;
+  right: 20%; /* En círculo se mete un poco hacia el centro para no cortarse con la curvatura */
+  z-index: 10; /* Fuerza a que flote por encima de la foto */
+  padding: 4px 10px;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: bold;
-  color: var(--color-texto-gris);
 }
 
 .badge-encontrado {
@@ -349,7 +421,33 @@ input:focus,
   .hero {
     width: 95%;
     padding: 20px 10px;
+    position: relative; /* Para que el badge del hero se posicione correctamente */
   }
+
+.badge-hero {
+  position: absolute;
+  top: -12px;       /* Lo eleva ligeramente sobre el borde superior */
+  right: 25px;      /* Distancia desde la esquina derecha */
+  background-color: var(--color-terciario); 
+  color: var(--color-blanco);
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-family: sans-serif; /* La otra letra ya no me convenció */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+/* Tamaño de la imagen dentro del badge */
+.icono-badge-hero {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+}
 
   .formulario {
     width: 95%;

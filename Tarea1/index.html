@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LoremIpsum</title>
+  <title>Alice in Lostland</title>
   
   <link rel="stylesheet" href="styles.css">
   
 <link rel="icon" href="imagenes/logoPhantomsiita.png" type="image/png">
 </head>
 <body>
-  
+  <!-- La nav bar-->
   <header>
     <nav class="navbar">
       <div class="logo">Phantom Siita</div>
@@ -24,64 +24,68 @@
       <div>
         <form role="search" class="search-form">
           <input type="text" name="q" placeholder="Find me...">
-          <button type="submit" class="btn">Enviar</button>
+          <button type="submit" class="btn" href="#tarjetas">Enviar</button>
+          <img src="imagenes/searchMe.webp" alt="Buscar" class="icono-pocion">
           <label for="q" class="visually-hidden">Pregunta al sombrerero</label>
         </form>
       </div>
     </nav>
   </header>
 
+  <!-- Contenido principal -->
   <main>
     <center><h1 class="destacado">Bienvenido a la madriguera</h1></center>
+    <!-- Sección del hero -->
     <section id="inicio" class="hero">
+      <span class="badge-hero">
+         <img src="imagenes/ttrebol.png" alt="Trébol" class="icono-badge-hero">
+     </span>
       <div class="hero-content">
         <h3>Explora el wonderland de los objetos perdidos</h3>
         <p>Descubre, reporta y recupera objetos en el pais de las maravillas.</p>
-        <a href="#servicios" class="btn">Comienza ahora</a>
+        <a href="#tarjetas" class="btn">Comienza ahora</a>
       </div>
     </section>
 
     <!-- Contenedor de las tarjetas -->
-  <section class="seccion-tarjetas">
+  <section id="tarjetas" class="seccion-tarjetas">
     <center><h2>Objetos Encontrados</h2></center>
     <div class="contenedor-grid">
       <!-- Tarjeta 1 -->
       <article class="tarjeta">
-        <img src="imagenes/objetos/cuaderno.jpg" alt="Portada de proyecto 1">
-        <div class="contenido-tarjeta">
-          <span class="badge badge-recuperado">Recuperado</span>
-          <h3>Objeto 1</h3>
-          <p>Este elemento fue encontrado en X.</p>
-          <a href="#" class="btn boton-tarjeta">Ver más</a>
-        </div>
-      </article>
+  <span class="badge badge-recuperado">Recuperado</span>
+  <img src="imagenes/objetos/cuaderno.jpg" alt="Portada de proyecto 1">
+  <div class="contenido-tarjeta">
+    <h3>Objeto 1</h3>
+    <p>Este elemento fue encontrado en X.</p>
+    <a href="#objetos" class="btn boton-tarjeta">Ver más</a>
+  </div>
+</article>
 
       <!-- Tarjeta 2 -->
       <article class="tarjeta">
-        <img src="imagenes/objetos/encontrado.jpeg" alt="Portada de proyecto 2">
-        <div class="contenido-tarjeta">
-          <span class="badge badge-encontrado">Encontrado</span>
-          <h3>Objeto 2</h3>
-          <p>Este elemento fue encontrado en Y. Despues de que se realizó la exploración.
-            detallada de cerca de 10,000 metros cuadrados en el interior de ya no sé que poner
-            quiero llegar al limite de la tarjeta pero es bastante espacio el que tiene, olvidenlo 
-            ya llegué al final 
-          </p>
-          <a href="#" class="btn boton-tarjeta">Ver más</a>
-        </div>
-      </article>
+  <span class="badge badge-encontrado">Encontrado</span>
+  <img src="imagenes/objetos/encontrado.jpeg" alt="Portada de proyecto 1">
+  <div class="contenido-tarjeta">
+    <h3>Objeto 1</h3>
+    <p>Este elemento fue encontrado en. Esto es un test para ver como se comporta con textos largos ya que cambie el cuadrado y por lo que veo se ve bastante bien.</p>
+    <a href="#objetos" class="btn boton-tarjeta">Ver más</a>
+  </div>
+</article>
 
       <!-- Tarjeta 3 -->
-      <article class="tarjeta">
-        <img src="imagenes/objetos/recuperado.jpg" alt="Portada de proyecto 3">
-        <div class="contenido-tarjeta">
-          <span class="badge badge-perdido">Perdido</span>
-          <h3>Tercer Objeto</h3>
-          <p>Este elemento fue encontrado en Z. TESTESTESTESTETSETESTSETESTESETETSETSTESTSETETSSETESTESTSETETTETESESESE</p> 
-          <a href="#" class="btn boton-tarjeta">Ver más</a>
-        </div>
-      </article>
+       <article class="tarjeta">
+  <span class="badge badge-perdido">Perdido</span>
+  <img src="imagenes/objetos/recuperado.jpg" alt="Portada de proyecto 1">
+  <div class="contenido-tarjeta">
+    <h3>Objeto 1</h3>
+    <p>Este elemento fue encontrado en X.</p>
+    <a href="#objetos" class="btn boton-tarjeta">Ver más</a>
+  </div>
+</article>
     </div>
+
+    <!-- Formulario para reportar objetos -->
   </section>
   <section id="reportar" class="content-section">
   <center>
@@ -89,6 +93,9 @@
     <p>¿Encontraste un objeto perdido? ¡Reporta aquí!</p>
   </center>
     <form class="formulario">
+      <span class="badge-formulario">
+        <img src="imagenes/pica-761860_1280.png" alt="As de picas" class="icono-badge">
+      </span>
       <label for="nombre">Título de la publicación:</label>
       <input type="text" id="nombre" name="nombre" required>
       <label for="descripcion">Descripción:</label>
@@ -104,6 +111,7 @@
   </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-links">
       <ul class="footer-links">
