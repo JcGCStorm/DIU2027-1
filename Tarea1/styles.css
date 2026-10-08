@@ -44,10 +44,68 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 18px;
 }
 
-.nav-link {
-  color: #9c5ee5;
+/* Es de la clase logo, para el nombre del sitio web, de momento es un texto nomas */
+.logo {
+  font-family: 'Bukhari Script Alternates';
+  font-size: 28px;
+  color: #ffffff;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 5px; /* Espacio entre el logo y los links de navegación */
+}
+
+/* Para que sea un tanto más interactivo, le pongo  un hover que cambia el color*/
+.logo:hover {
+  color: #9c5ee5; /* Cambia el color del logo al pasar el cursor */
+  text-decoration: underline;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 200px;
+  margin-bottom: auto;
+  margin-left: auto;
+  background-color: #129261;
+}
+
+.nav-link {
+  color: #000000;
+  text-decoration: none;
+  margin-right: 20px; /* Espacio entre los links de navegación y la barra de búsqueda */
+  display: flex; /* Con este alineamos los links de manera horizontal */
+  gap: 10px;
+}
+
+.nav-link:hover {
+  color: #fd357b; /* De momento solo cambia el color de los links al pasar el cursor */
+  text-decoration: underline;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #126692; /* Color de fondo del hero */
+  color: #ffffff; /* Color del texto del hero */
+  border-radius: 12px; /* Bordes redondeados del hero */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave del hero */
+}
+
+.btn {
+  background-color: #fd357b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
 }
 
 /* Para el botón */
@@ -81,8 +139,15 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  display: flex;
+  display: flex; 
+  transition: transform 0.2s ease, box-shadow 0.2s ease;  /* Con esto le agregamos un pequeño delay al hover */
   flex-direction: column;
+}
+
+/* Efecto al pasar el cursor sobre la tarjeta */
+.tarjeta:hover {
+  transform: translateY(-5px); /*lo mandamos unos 5 pixeles hacia arriba */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Imagen dentro de la tarjeta */
@@ -100,8 +165,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   flex-grow: 1; /* Como las descripciones de los objetos tienen diferentes
   alturas le puse el 1 para que se expandan ed manera uniforme, sin ese 1
-  el botón se desplaza hasta arriba, pero todos modos tengo que cambiarle
-  que no sea infinito cuanto crecen las tarjetas */
+  el botón se desplaza hasta arriba */
 }
 
 .contenido-tarjeta h3 {
@@ -112,21 +176,27 @@ h1, h2, h3, h4, h5, h6 {
 
 .contenido-tarjeta p {
   color: #555555;
+  display: -webkit-box; /* Para hacer el recorte de texto en varias líneas */
+  -webkit-line-clamp: 3; /* Limita a 3 líneas de texto */
+  -webkit-box-orient: vertical;
+  overflow: hidden; /*Sin esto no funciona el recorte de texto, continua hasta abajo aunque tenga solo 3 líneas 
+  y se encima con el botón*/
   font-size: 14px;
-  line-height: 1.4;
-  margin-bottom: 16px;
+  line-height: 1.4; /* este es el espaciado entre lines */
+  margin-bottom: 16px; /* El margen inferior de la tarjeta*/
+  overflow-wrap: break-word; /* Rompe palabras largas para que no se salgan de la tarjeta */
+  max-width: 100%;
 }
 
 /* Botón o enlace de la tarjeta */
 .boton-tarjeta {
   margin-top: auto; /* Con esto empuja el botón siempre al fondo de la tarjeta 
   Pero necesita que el flex grow sea 1 porque si no no sé que pasa que lo ignora o algo*/
-  display: inline-block;
   text-align: center;
-  background-color: #fd357b;
-  color: #ffffff;
-  text-decoration: none;
   padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: bold;
+}
+
+.boton-tarjeta:hover {
+  opacity: 0.9; /* Le agregamos un hover que al poner el cursor en el botón
+  lo haga un poco más opaco, que está bien, hace que resalte pero creo que voy a hacer que cambie de colorA */
 }

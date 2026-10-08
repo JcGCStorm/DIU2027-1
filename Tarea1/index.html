@@ -12,22 +12,33 @@
 <body>
 
   <header>
-    <nav>
+    <nav class="navbar">
       <div class="logo">Phantom Siita</div>
-      <ul class="nav-links">
+      <div>
+      <ul class="nav-link">
         <li><a href="#inicio" class="nav-link">Inicio</a></li>
-        <li><a href="#servicios" class="nav-link">Buscar</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        <li><a href="#servicios" class="nav-link">Reportar</a></li>
+        <li><a href="#contacto" class="nav-link">Comunidad</a></li>
       </ul>
+      </div>
+      <div>
+        <form role="search" class="search-form">
+          <input type="text" name="q" placeholder="Find me...">
+          <button type="submit" class="btn">Enviar</button>
+          <label for="q" class="visually-hidden">Pregunta al sombrerero</label>
+        </form>
+      </div>
     </nav>
   </header>
 
   <main>
-    <h1 class="destacado">Bienvenido a la madriguera</h1>
+    <center><h1 class="destacado">Bienvenido a la madriguera</h1></center>
     <section id="inicio" class="hero">
-      <h1>Lorem Ipsum</h1>
-      <p>Lorem Ipsum.</p>
-      <button id="boton-accion">Lorem impsum</button>
+      <div class="hero-content">
+        <h2>Explora el wonderland de los objetos perdidos</h2>
+        <p>Descubre, reporta y recupera objetos en el pais de las maravillas.</p>
+        <a href="#servicios" class="btn">Comienza ahora</a>
+      </div>
     </section>
 
     <!-- Contenedor de las tarjetas -->
@@ -42,7 +53,7 @@
         <div class="contenido-tarjeta">
           <h3>Objeto 1</h3>
           <p>Este elemento fue encontrado en X.</p>
-          <a href="#" class="boton-tarjeta">Ver más</a>
+          <a href="#" class="btn boton-tarjeta">Ver más</a>
         </div>
       </article>
 
@@ -51,18 +62,12 @@
         <img src="imagenes/falling2.jpg" alt="Portada de proyecto 2">
         <div class="contenido-tarjeta">
           <h3>Objeto 2</h3>
-          <p>Este elemento fue encontrado en Y.</p>
-          <p>Este elemento fue encontrado en Y.</p>
-          <p>Este elemento fue encontrado en Y.</p>
-          <p>Este elemento fue encontrado en Y.</p>
-          <p>Este elemento fue encontrado en Y.</p>
-          <p>Este elemento fue encontrado en Y.</p>
-          <p>Este elemento fue encontrado en Y.</p>
-          <p>Este elemento fue encontrado en Y.</p>
-          <p>Este elemento fue encontrado en Y.</p>
-          <p>Este elemento fue encontrado en Y.</p>
-          <p>Este elemento fue encontrado en Y.</p>
-          <a href="#" class="boton-tarjeta">Ver más</a>
+          <p>Este elemento fue encontrado en Y. Despues de que se realizó la exploración.
+            detallada de cerca de 10,000 metros cuadrados en el interior de ya no sé que poner
+            quiero llegar al limite de la tarjeta pero es bastante espacio el que tiene, olvidenlo 
+            ya llegué al final 
+          </p>
+          <a href="#" class="btn boton-tarjeta">Ver más</a>
         </div>
       </article>
 
@@ -73,7 +78,7 @@
           <h3>Tercer Objeto</h3>
           <p>Este elemento fue encontrado en Z. TESTESTESTESTETSETESTSETESTESETETSETSTESTSETETSSETESTESTSETETTETESESESE</p> 
           <!-- Se sale el texto XD -->
-          <a href="#" class="boton-tarjeta">Ver más</a>
+          <a href="#" class="btn boton-tarjeta">Ver más</a>
         </div>
       </article>
 
